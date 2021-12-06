@@ -10,6 +10,11 @@ namespace GoblinHunterFinal2
     [Serializable]
     class GameEngine : Map
     {
+        public Map GAMEMAP;
+        public GameEngine(int _X, int _Y, string _ESYMBOL, TileType _TOT, int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES, int _NUMGOLD) : base( _MINWIDTH, _MAXWIDTH, _MINHEIGHT, _MAXHEIGHT, _NUMBEROFENEMIES, _NUMGOLD)
+        {
+            GAMEMAP = new Map(10, 10, 10, 10, 4, 5);
+        }
         // declaring the getters and the setter for the values used in the class
         private Map game;
 
@@ -26,26 +31,32 @@ namespace GoblinHunterFinal2
 
 
         //declaring the constructor and pulling the variables that are neccessary in this class
-       /* public GameEngine(int _X, int _Y, String _ESYMBOL, TileType _TOT, int _Damage, int _MAXHP, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH, int _NumberOfEnemies, int _Gold) : base(_X, _Y, " ", _TOT, _mapMinHGHT, _mapMaxHGHT, _mapMinWDTH, _mapMaxWDTH, 0, 9)
+       
+        public bool MovePlayer(Movement move)
         {
-           *//* int _gX = _X;
-            int _gY = _Y;
-            String _gSymbol = _ESYMBOL;
-            TileType _gTOT = _TOT;
-            int _gD = _Damage;
-            int _gMAXHP = _MAXHP;
-            int _gMapMinHght = _mapMinHGHT;
-            int _gMapMaxHght = _mapMinHGHT;
-            int _gMapMinWDTH = _mapMinWDTH;
-            int _gMapMaxWDTH = _mapMaxWDTH;
-            int _gNumEnemies = _NumberOfEnemies;
-            int _gGold = _Gold;
-           *//* Map mp = new Map(_gX, _gY, _gSymbol, _gTOT, _gMapMinWDTH, _gMapMaxWDTH, _gMapMinHght, _gMapMaxHght, _gNumEnemies, _gGold);
-            Map mmap = new Map(10, 10, " ", TileType.Empty, 10, 10, 10, 10, 10, 10);*//*
-        }*/
+            if (GAMEMAP.PLAYERCHARACTER.ReturnMove(move) == Convert.ToInt32(move))
+            {
+                GAMEMAP.Create(TileType.Empty, GAMEMAP.PLAYERCHARACTER.X, GAMEMAP.PLAYERCHARACTER.Y);
 
+                GAMEMAP.PLAYERCHARACTER.move(move);
+                GAMEMAP.MAPCONTAINER[GAMEMAP.PLAYERCHARACTER.X, GAMEMAP.PLAYERCHARACTER.Y] = GAMEMAP.PLAYERCHARACTER.;
+                return true;
+            }
+            return false;
+        }
         
-
+        public String PlayerAttack(int EnemyIndex)
+        {
+            bool EnemyInRange = false;
+            foreach(Tile T in GAMEMAP.PLAYERCHARACTER.)
+            {
+                if(T.X ==GAMEMAP.ENEMIES[EnemyIndex].X && (T.Y == GAMEMAP.ENEMIES[EnemyIndex].Y))
+                {
+                    EnemyInRange = true;
+                }
+            }
+            return EnemyInRange.ToString();
+        }
         public void Save()
         {
 
@@ -105,8 +116,6 @@ namespace GoblinHunterFinal2
         public char Obstacle = 'X';
         public char emptyTile = '.';
 
-        public GameEngine(int _EnemyX, int _EnemyY, string _ESYMBOL, TileType _TOT, int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES, int _NUMGOLD) : base(_EnemyX, _EnemyY, _ESYMBOL, _TOT, _MINWIDTH, _MAXWIDTH, _MINHEIGHT, _MAXHEIGHT, _NUMBEROFENEMIES, _NUMGOLD)
-        {
-        }
+        
     }
 }

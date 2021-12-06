@@ -27,9 +27,11 @@ namespace GoblinHunterFinal2
 
         private int emaxHp;
 
-        protected Enemy(int _CharacterX, int _CharacterY, TileType _TOT, string _Symbol, int _Hp, int _maxHp, int _Damage) : base(_CharacterX, _CharacterY, _TOT, _Symbol, _Hp, _maxHp, _Damage)
+        protected Enemy(int _X, int _Y, TileType _TOT, string _Symbol,int _EMAXHP, int _EDAMAGE) : base(_X,_Y, _TOT, _Symbol, _EMAXHP, _EDAMAGE)
         {
             GobVision = new List<Tile>();
+            edamage = _EDAMAGE;
+            emaxHp = _EMAXHP;
         }
 
         public int eMAXHP

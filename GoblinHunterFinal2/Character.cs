@@ -48,9 +48,9 @@ namespace GoblinHunterFinal2
              _Y = Y;
          }*/
         // declaring constructors for the character classes and pulling the neccessary variables
-        public Character(int _CharacterX, int _CharacterY, TileType _TOT, string _Symbol, int _Hp, int _maxHp, int _Damage) : base(_CharacterX, _CharacterY, _TOT, _Symbol)
+        public Character( int _X, int _Y, TileType _TOT, string _Symbol, int _maxHp, int _Damage) : base(_X,_Y, _TOT, _Symbol)
         {
-            Hp = _Hp;
+            
             maxHp = _maxHp;
             Damage = _Damage;
             charVision = new Tile[4];
@@ -113,27 +113,8 @@ namespace GoblinHunterFinal2
 
             return distanceToTarget;
         }
-        //this method determines the how the players will move on the grid by either plussing or minussing values to move the player 
-        public void move(Movement move)
-        {
-            switch (move)
-            {
-                case Movement.Up:
-                    Y--;
-                    break;
-                case Movement.Down:
-                    Y++;
-                    break;
-                case Movement.Left:
-                    X--;
-                    break;
-                case Movement.Right:
-                    X++;
-                    break;
-            }
-
-            movement = move; //store current move
-        }
+       
+        
 
         public override string ToString()
         {

@@ -50,20 +50,20 @@ namespace GoblinHunterFinal2
         protected Random RANDOM_NUMBER_GENERATOR = new Random();
 
         //declared a constructor for the class ad declaring newer variables for the minimum and maximum variables for the height and width
-        public Map(int _EnemyX, int _EnemyY, String _ESYMBOL, TileType _TOT, int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES, int _NUMGOLD) : base(_EnemyX, _EnemyY, _TOT, "  ", 10, 10, 10)
+       
+    public Map(int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES, int _NUMGOLD)
         {
-            MAPWIDTH = RANDOM_NUMBER_GENERATOR.Next(_MINWIDTH, _MAXWIDTH);
-            MAPHEIGHT = RANDOM_NUMBER_GENERATOR.Next(_MINHEIGHT, _MAXHEIGHT);
+        MAPWIDTH = RANDOM_NUMBER_GENERATOR.Next(_MINWIDTH, _MAXWIDTH);
+        MAPHEIGHT = RANDOM_NUMBER_GENERATOR.Next(_MINHEIGHT, _MAXHEIGHT);
 
-            MAPCONTAINER = new Tile[MAPWIDTH, MAPHEIGHT];
+        MAPCONTAINER = new Tile[MAPWIDTH, MAPHEIGHT];
 
-            ENEMIES = new List<Enemy>(_NUMBEROFENEMIES);
-            generateMap();
-            UpdateVision();
+        ENEMIES = new List<Enemy>(_NUMBEROFENEMIES);
+        generateMap();
+        UpdateVision();
 
-            ITEMS = new List<Item>(_NUMGOLD);
-
-        }
+        ITEMS = new List<Item>(_NUMGOLD);
+    }
 
 
 
@@ -142,7 +142,7 @@ namespace GoblinHunterFinal2
                         heroY = RANDOM_NUMBER_GENERATOR.Next(0, MAPHEIGHT);
                     }
 
-                    Hero newHero = new Hero(heroX, heroY, TOT, "H", 10, 100, 2);
+                    Hero newHero = new Hero(X, Y, TOT, "H", 10, 2);
                     PLAYERCHARACTER = newHero;
                     MAPCONTAINER[heroX, heroY] = newHero;
                     break;
