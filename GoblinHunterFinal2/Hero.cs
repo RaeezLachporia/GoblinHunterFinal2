@@ -108,5 +108,10 @@ namespace GoblinHunterFinal2
         {
             return Convert.ToInt32(move);
         }
+
+        public override int ReturnMove()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

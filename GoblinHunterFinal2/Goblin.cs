@@ -19,7 +19,7 @@ namespace GoblinHunterFinal2
 
         private int damage;
 
-        public Goblin(int _CharacterX, int _CharacterY, TileType _TOT, string _Symbol, int _Hp, int _maxHp, int _Damage) : base(_CharacterX, _CharacterY, _TOT, _Symbol, _Hp, _maxHp, _Damage)
+        public Goblin(int _CharacterX, int _CharacterY, TileType _TOT, string _Symbol, int _Hp, int _maxHp, int _Damage) : base(_CharacterX, _CharacterY, _TOT, _Symbol, _maxHp, _Damage)
         {
         }
 
