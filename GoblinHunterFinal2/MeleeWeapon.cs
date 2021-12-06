@@ -32,7 +32,9 @@ namespace GoblinHunterFinal2
         public enum weaponType
         {
             Dagger,
-            LongSword
+            LongSword,
+            Rifle,
+            Longbow
         }
 
         private weaponType wt;
