@@ -12,14 +12,14 @@ namespace GoblinHunterFinal2
 {
     public partial class Form1 : Form
     {
-        
+        protected GameEngine GM;
         public Form1()
         {
             InitializeComponent();
-            GameEngine GM = new GameEngine(10, 10, " ", Tile.TileType.Empty, 10, 10, 10, 10, 10, 10,3,3);
+            GM = new GameEngine();
           
             GM.generateMap();
-
+            txtPlayerInfo.Text = GM.PLAYERCHARACTER.ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)

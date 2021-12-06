@@ -30,7 +30,7 @@ namespace GoblinHunterFinal2
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPlayerInfo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -42,20 +42,20 @@ namespace GoblinHunterFinal2
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // textBox1
+            // txtPlayerInfo
             // 
-            this.textBox1.Location = new System.Drawing.Point(657, 57);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 46);
-            this.textBox1.TabIndex = 1;
+            this.txtPlayerInfo.Location = new System.Drawing.Point(657, 57);
+            this.txtPlayerInfo.Multiline = true;
+            this.txtPlayerInfo.Name = "txtPlayerInfo";
+            this.txtPlayerInfo.Size = new System.Drawing.Size(150, 46);
+            this.txtPlayerInfo.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(893, 584);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPlayerInfo);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -68,7 +68,7 @@ namespace GoblinHunterFinal2
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPlayerInfo;
     }
 }
 

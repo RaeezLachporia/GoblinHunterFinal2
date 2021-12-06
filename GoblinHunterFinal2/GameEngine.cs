@@ -26,9 +26,9 @@ namespace GoblinHunterFinal2
 
 
         //declaring the constructor and pulling the variables that are neccessary in this class
-        public GameEngine(int _X, int _Y, String _ESYMBOL, TileType _TOT, int _Damage, int _MAXHP, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH, int _NumberOfEnemies, int _Gold) : base(_X, _Y, " ", _TOT, _mapMinHGHT, _mapMaxHGHT, _mapMinWDTH, _mapMaxWDTH, 0, 9)
+       /* public GameEngine(int _X, int _Y, String _ESYMBOL, TileType _TOT, int _Damage, int _MAXHP, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH, int _NumberOfEnemies, int _Gold) : base(_X, _Y, " ", _TOT, _mapMinHGHT, _mapMaxHGHT, _mapMinWDTH, _mapMaxWDTH, 0, 9)
         {
-            int _gX = _X;
+           *//* int _gX = _X;
             int _gY = _Y;
             String _gSymbol = _ESYMBOL;
             TileType _gTOT = _TOT;
@@ -40,13 +40,13 @@ namespace GoblinHunterFinal2
             int _gMapMaxWDTH = _mapMaxWDTH;
             int _gNumEnemies = _NumberOfEnemies;
             int _gGold = _Gold;
-            Map mp = new Map(_gX, _gY, _gSymbol, _gTOT, _gMapMinWDTH, _gMapMaxWDTH, _gMapMinHght, _gMapMaxHght, _gNumEnemies, _gGold);
-            Map mmap = new Map(10, 10, " ", TileType.Empty, 10, 10, 10, 10, 10, 10);
-        }
+           *//* Map mp = new Map(_gX, _gY, _gSymbol, _gTOT, _gMapMinWDTH, _gMapMaxWDTH, _gMapMinHght, _gMapMaxHght, _gNumEnemies, _gGold);
+            Map mmap = new Map(10, 10, " ", TileType.Empty, 10, 10, 10, 10, 10, 10);*//*
+        }*/
 
         
 
-        public void Save(Map mmap)
+        public void Save()
         {
 
             BinaryFormatter bf = new BinaryFormatter();
@@ -56,7 +56,7 @@ namespace GoblinHunterFinal2
             {
                 using (fsin)
                 {
-                    mmap = (Map)bf.Deserialize(fsin);
+                    // = (Map)bf.Deserialize(fsin);
                     Console.WriteLine(Map.TileType.Barrier);
                     Console.WriteLine(Map.TileType.Empty);
                     Console.WriteLine(Map.TileType.Hero);
@@ -105,5 +105,8 @@ namespace GoblinHunterFinal2
         public char Obstacle = 'X';
         public char emptyTile = '.';
 
+        public GameEngine(int _EnemyX, int _EnemyY, string _ESYMBOL, TileType _TOT, int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES, int _NUMGOLD) : base(_EnemyX, _EnemyY, _ESYMBOL, _TOT, _MINWIDTH, _MAXWIDTH, _MINHEIGHT, _MAXHEIGHT, _NUMBEROFENEMIES, _NUMGOLD)
+        {
+        }
     }
 }

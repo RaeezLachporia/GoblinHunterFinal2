@@ -6,7 +6,7 @@ namespace GoblinHunterFinal2
 {
     class Map :Enemy
     {
-        Map mmap = new Map(10, 10, " ", TileType.Empty, 0, 10, 0, 10, 3, 3);
+        //Map mmap = new Map(10, 10, " ", TileType.Empty, 10, 10, 10, 10, 10, 10);
 
         //declaring all the variables for the class
         private Tile[,] mapcontainer;
