@@ -11,7 +11,7 @@ namespace GoblinHunterFinal2
     class GameEngine : Map
     {
         public Map GAMEMAP;
-        public GameEngine(int _X, int _Y, string _ESYMBOL, TileType _TOT, int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES, int _NUMGOLD) : base( _MINWIDTH, _MAXWIDTH, _MINHEIGHT, _MAXHEIGHT, _NUMBEROFENEMIES, _NUMGOLD)
+        public GameEngine(/*int _X, int _Y, string _ESYMBOL, TileType _TOT,*/ int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES, int _NUMGOLD) : base( _MINWIDTH, _MAXWIDTH, _MINHEIGHT, _MAXHEIGHT, _NUMBEROFENEMIES, _NUMGOLD)
         {
             GAMEMAP = new Map(10, 10, 10, 10, 4, 5);
         }
@@ -48,7 +48,7 @@ namespace GoblinHunterFinal2
         public String PlayerAttack(int EnemyIndex)
         {
             bool EnemyInRange = false;
-            foreach(Tile T in GAMEMAP.PLAYERCHARACTER.)
+            foreach(Tile T in GAMEMAP.ITEMS)
             {
                 if(T.X ==GAMEMAP.ENEMIES[EnemyIndex].X && (T.Y == GAMEMAP.ENEMIES[EnemyIndex].Y))
                 {
