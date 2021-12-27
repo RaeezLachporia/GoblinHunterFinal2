@@ -30,12 +30,22 @@ namespace GoblinHunterFinal2
             set { durability = value; }
         }
 
+        public static explicit operator Weapon(MeleeWeapon.weaponType v)
+        {
+            throw new NotImplementedException();
+        }
+
         private int cost;
 
         public int Cost
         {
             get { return cost; }
             set { cost = value; }
+        }
+
+        public static explicit operator Weapon(RangedWeapons.weaponType v)
+        {
+            throw new NotImplementedException();
         }
 
         private int weapontype;

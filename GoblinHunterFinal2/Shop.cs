@@ -8,31 +8,32 @@ namespace GoblinHunterFinal2
     {
         Weapon [] wpn = new Weapon[3];
         Random rndwpn = new Random();
-        Character player = new Character(0,0,Tile.TileType.Hero,"H",10,2);
-
+        Character player = new Character(0, 0, Tile.TileType.Hero, "H", 10, 2);
+        int number;
         public Shop(Character _Player, Weapon[]_wpn)
         {
-            int number;
             
+            number = rndwpn.Next(1,3);
+                
             
         }
         private Weapon RandomWeapon()
         {
-            if (rndwpn.Next() == 1)
+            if (number == 1)
             {
-                return MeleeWeapon.weaponType.Dagger;
+                return (Weapon)MeleeWeapon.weaponType.Dagger;
             }
             if (rndwpn.Next() ==2)
             {
-                return MeleeWeapon.weaponType.LongSword;
+                return (Weapon)MeleeWeapon.weaponType.LongSword;
             }
             if (rndwpn.Next()==3)
             {
-                return RangedWeapons.weaponType.Rifle;
+                return (Weapon)RangedWeapons.weaponType.Rifle;
             }
             else
             {
-                return RangedWeapons.weaponType.Longbow;
+                return (Weapon)RangedWeapons.weaponType.Longbow;
             }
         }
     }

@@ -11,6 +11,12 @@ namespace GoblinHunterFinal2
 
         }
 
+        protected Item(int x, int y, string symbol)
+        {
+            this.x = x;
+            this.y = y;
+            Symbol = symbol;
+        }
 
         public abstract string ToString();
 

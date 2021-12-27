@@ -45,7 +45,7 @@ namespace GoblinHunterFinal2
             set { wt = value; }
         }
 
-        public override int Range()
+        public int Range()
         {
             int Range = 1;
             return Range;
