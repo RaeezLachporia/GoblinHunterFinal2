@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GoblinHunterFinal2
 {
-    abstract class Character : Tile
+    public abstract class Character : Tile
     {
         //declaring  variables for the class
         protected Tile[] charVision;
@@ -48,9 +48,9 @@ namespace GoblinHunterFinal2
              _Y = Y;
          }*/
         // declaring constructors for the character classes and pulling the neccessary variables
-        public Character( int _X, int _Y, TileType _TOT, string _Symbol, int _maxHp, int _Damage) : base(_X,_Y, _TOT, _Symbol)
+        public Character(int _X, int _Y, TileType _TOT, string _Symbol, int _maxHp, int _Damage) : base(_X, _Y, _TOT, _Symbol)
         {
-            
+
             maxHp = _maxHp;
             Damage = _Damage;
             charVision = new Tile[4];
@@ -113,8 +113,8 @@ namespace GoblinHunterFinal2
 
             return distanceToTarget;
         }
-       
-        
+
+
 
         public override string ToString()
         {

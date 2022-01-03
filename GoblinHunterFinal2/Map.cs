@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GoblinHunterFinal2
 {
-    class Map :Enemy
+    class Map : Enemy
     {
         //Map mmap = new Map(10, 10, " ", TileType.Empty, 10, 10, 10, 10, 10, 10);
 
@@ -50,20 +50,20 @@ namespace GoblinHunterFinal2
         protected Random RANDOM_NUMBER_GENERATOR = new Random();
 
         //declared a constructor for the class ad declaring newer variables for the minimum and maximum variables for the height and width
-       
-    public Map(int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES, int _NUMGOLD)
+
+        public Map(int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES, int _NUMGOLD)
         {
-        MAPWIDTH = RANDOM_NUMBER_GENERATOR.Next(_MINWIDTH, _MAXWIDTH);
-        MAPHEIGHT = RANDOM_NUMBER_GENERATOR.Next(_MINHEIGHT, _MAXHEIGHT);
+            MAPWIDTH = RANDOM_NUMBER_GENERATOR.Next(_MINWIDTH, _MAXWIDTH);
+            MAPHEIGHT = RANDOM_NUMBER_GENERATOR.Next(_MINHEIGHT, _MAXHEIGHT);
 
-        MAPCONTAINER = new Tile[MAPWIDTH, MAPHEIGHT];
+            MAPCONTAINER = new Tile[MAPWIDTH, MAPHEIGHT];
 
-        ENEMIES = new List<Enemy>(_NUMBEROFENEMIES);
-        generateMap();
-        UpdateVision();
+            ENEMIES = new List<Enemy>(_NUMBEROFENEMIES);
+            generateMap();
+            UpdateVision();
 
-        ITEMS = new List<Item>(_NUMGOLD);
-    }
+            ITEMS = new List<Item>(_NUMGOLD);
+        }
 
 
 

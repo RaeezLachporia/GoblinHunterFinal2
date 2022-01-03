@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GoblinHunterFinal2
 {
-    abstract class Tile
+    public abstract class Tile
     {
         //delcaring the enum for the movement parameters for the players and the enemies
         public enum TileType

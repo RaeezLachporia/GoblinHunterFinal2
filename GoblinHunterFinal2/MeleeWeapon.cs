@@ -6,15 +6,15 @@ namespace GoblinHunterFinal2
 {
     class MeleeWeapon : Weapon
     {
-        
 
-        
+
+
         public MeleeWeapon(weaponType _WT, int _X, int _Y, string _Symbol) : base(_X, _Y, _Symbol)
         {
             String WeaponType = _Symbol;
             WeaponType = "Dagger";
             WeaponType = "LongSord";
-            MeleeWeapon MDWPN = new MeleeWeapon(weaponType.Dagger,0,0,"D");
+            MeleeWeapon MDWPN = new MeleeWeapon(weaponType.Dagger, 0, 0, "D");
             MeleeWeapon MLWPN = new MeleeWeapon(weaponType.LongSword, 0, 0, "LS");
 
 
@@ -50,6 +50,7 @@ namespace GoblinHunterFinal2
             int Range = 1;
             return Range;
         }
+
         public override string ToString()
         {
             throw new NotImplementedException();
