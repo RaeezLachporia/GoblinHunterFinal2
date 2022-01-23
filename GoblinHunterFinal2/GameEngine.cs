@@ -24,7 +24,7 @@ namespace GoblinHunterFinal2
             set { game = value; }
         }
         //this method moves the player 
-        public bool movePlayer(Movement movement)
+        public bool movePlayer(Character.Movement movement)
         {
             return true;
         }
@@ -32,11 +32,11 @@ namespace GoblinHunterFinal2
 
         //declaring the constructor and pulling the variables that are neccessary in this class
        
-        public bool MovePlayer(Movement move)
+        public bool MovePlayer(Character.Movement move)
         {
             if (GAMEMAP.PLAYERCHARACTER.ReturnMove(move) == Convert.ToInt32(move))
             {
-                GAMEMAP.Create(TileType.Empty, GAMEMAP.PLAYERCHARACTER.X, GAMEMAP.PLAYERCHARACTER.Y);
+                GAMEMAP.Create(Tile.TileType.Empty, GAMEMAP.PLAYERCHARACTER.X, GAMEMAP.PLAYERCHARACTER.Y);
 
                 GAMEMAP.PLAYERCHARACTER.move(move);
                 GAMEMAP.MAPCONTAINER[GAMEMAP.PLAYERCHARACTER.X, GAMEMAP.PLAYERCHARACTER.Y] = GAMEMAP.PLAYERCHARACTER;
@@ -68,12 +68,7 @@ namespace GoblinHunterFinal2
                 using (fsin)
                 {
                     // = (Map)bf.Deserialize(fsin);
-                    Console.WriteLine(Map.TileType.Barrier);
-                    Console.WriteLine(Map.TileType.Empty);
-                    Console.WriteLine(Map.TileType.Hero);
-                    Console.WriteLine(Map.TileType.Enemy);
-                    Console.WriteLine(Map.TileType.Gold);
-                    Console.WriteLine(Map.TileType.Weapon);
+                   
                     Console.WriteLine();
                 }
             }

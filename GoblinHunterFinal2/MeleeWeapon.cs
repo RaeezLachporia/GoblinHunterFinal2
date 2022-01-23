@@ -9,7 +9,7 @@ namespace GoblinHunterFinal2
         
 
         
-        public MeleeWeapon(weaponType _WT, int _X, int _Y, string _Symbol) : base(_X, _Y, _Symbol)
+        public MeleeWeapon(weaponType _WT, int _X, int _Y, string _Symbol) : base(_X, _Y,TileType.Weapon, _Symbol)
         {
             String WeaponType = _Symbol;
             WeaponType = "Dagger";
@@ -45,11 +45,8 @@ namespace GoblinHunterFinal2
             set { wt = value; }
         }
 
-        public override int Range()
-        {
-            int Range = 1;
-            return Range;
-        }
+        public new int Range = 1;
+        
         public override string ToString()
         {
             throw new NotImplementedException();

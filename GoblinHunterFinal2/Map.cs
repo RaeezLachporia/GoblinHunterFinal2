@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GoblinHunterFinal2
 {
-    class Map :Enemy
+    class Map 
     {
         //Map mmap = new Map(10, 10, " ", TileType.Empty, 10, 10, 10, 10, 10, 10);
 
@@ -82,7 +82,7 @@ namespace GoblinHunterFinal2
                 }
                 if (E.Y > 0)
                 {
-                    E.GobVision.Add(MAPCONTAINER[E.X, Y - 1]);
+                    E.GobVision.Add(MAPCONTAINER[E.X, E.Y - 1]);
                 }
                 if (E.Y < MAPHEIGHT)
                 {
@@ -101,42 +101,42 @@ namespace GoblinHunterFinal2
                     if (x == 0 || x == MAPWIDTH - 1 || y == 0 || y == MAPHEIGHT)//BORDER
                     {
                         //create the barrier blocks that the player cant move past
-                        Create(TileType.Barrier, x, y);
+                        Create(Tile.TileType.Barrier, x, y);
 
                     }
                     else
                     {
                         //creates empty tiles that the player can move around in
-                        Create(TileType.Empty, x, y);
+                        Create(Tile.TileType.Empty, x, y);
 
                     }
                 }
             }
-            Create(TileType.Hero);
+            Create(Tile.TileType.Hero);
             for (int e = 0; e < ENEMIES.Count; e++)
             {
-                Create(TileType.Enemy);
+                Create(Tile.TileType.Enemy);
             }
 
         }
 
-        public void Create(TileType TOT, int x = 0, int y = 0)
+        public void Create(Tile.TileType TOT, int X = 0, int Y = 0)
         {
             switch (TOT)
             {
-                case TileType.Barrier:
+                case Tile.TileType.Barrier:
                     Obstacle NewBarrier = new Obstacle(X, Y, TOT, "#");
                     MAPCONTAINER[X, Y] = NewBarrier;
                     break;
-                case TileType.Empty:
+                case Tile.TileType.Empty:
                     EmptyTile NewEmptyTile = new EmptyTile(X, Y, TOT, " ");
                     MAPCONTAINER[X, Y] = NewEmptyTile;
                     break;
-                case TileType.Hero:
+                case Tile.TileType.Hero:
                     int heroX = RANDOM_NUMBER_GENERATOR.Next(0, MAPWIDTH);
                     int heroY = RANDOM_NUMBER_GENERATOR.Next(0, MAPHEIGHT);
 
-                    while (MAPCONTAINER[heroX, heroY].TOT != TileType.Empty)
+                    while (MAPCONTAINER[heroX, heroY].TOT != Tile.TileType.Empty)
                     {
                         heroX = RANDOM_NUMBER_GENERATOR.Next(0, MAPWIDTH);
                         heroY = RANDOM_NUMBER_GENERATOR.Next(0, MAPHEIGHT);
@@ -146,11 +146,11 @@ namespace GoblinHunterFinal2
                     PLAYERCHARACTER = newHero;
                     MAPCONTAINER[heroX, heroY] = newHero;
                     break;
-                case TileType.Enemy:
+                case Tile.TileType.Enemy:
                     int enemyX = RANDOM_NUMBER_GENERATOR.Next(0, MAPWIDTH);
                     int enemyY = RANDOM_NUMBER_GENERATOR.Next(0, MAPHEIGHT);
 
-                    while (MAPCONTAINER[enemyX, enemyY].TOT != TileType.Empty)
+                    while (MAPCONTAINER[enemyX, enemyY].TOT != Tile.TileType.Empty)
                     {
                         enemyX = RANDOM_NUMBER_GENERATOR.Next(0, MAPWIDTH);
                         enemyY = RANDOM_NUMBER_GENERATOR.Next(0, MAPHEIGHT);
@@ -162,21 +162,21 @@ namespace GoblinHunterFinal2
                     int rndNumber = rnd.Next(1, 99);
                     if (rndNumber % 2 == 0)
                     {
-                        NewEnemy = new Goblin(enemyX, enemyY, TOT, "G", eMAXHP, 10, 1);
+                        NewEnemy = new Goblin(enemyX, enemyY, TOT, "G", 10, 10, 1);
                     }
                     else
                     {
-                        NewEnemy = new Mage(enemyX, enemyY, TOT, "M", eMAXHP);
+                        NewEnemy = new Mage(enemyX, enemyY, TOT, "M", 5, 5, 5);
                     }
 
                     ENEMIES.Add(NewEnemy);
                     MAPCONTAINER[enemyX, enemyY] = NewEnemy;
                     break;
-                case TileType.Gold:
+                case Tile.TileType.Gold:
                     int goldX = RANDOM_NUMBER_GENERATOR.Next(0, MAPWIDTH);
                     int goldY = RANDOM_NUMBER_GENERATOR.Next(0, MAPHEIGHT);
 
-                    while (MAPCONTAINER[goldX, goldY].TOT != TileType.Empty)
+                    while (MAPCONTAINER[goldX, goldY].TOT != Tile.TileType.Empty)
                     {
                         goldX = RANDOM_NUMBER_GENERATOR.Next(0, MAPWIDTH);
                         goldY = RANDOM_NUMBER_GENERATOR.Next(0, MAPHEIGHT);
@@ -207,7 +207,7 @@ namespace GoblinHunterFinal2
 
         }
 
-        public override int ReturnMove()
+        public int ReturnMove()
         {
             throw new NotImplementedException();
         }

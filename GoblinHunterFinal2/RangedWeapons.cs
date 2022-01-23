@@ -6,7 +6,7 @@ namespace GoblinHunterFinal2
 {
     class RangedWeapons : Weapon
     {
-        public RangedWeapons(weaponType _WT,int _X, int _Y, string _Symbol) : base(_X, _Y, _Symbol)
+        public RangedWeapons(weaponType _WT,int _X, int _Y, string _Symbol) : base(_X, _Y,TileType.Weapon, _Symbol)
         {
             String WeaponType = _Symbol;
             WeaponType = "Rifle";

@@ -47,7 +47,7 @@ namespace GoblinHunterFinal2
         }
 
 
-        protected Weapon(int _X, int _Y, string _Symbol) : base(_X, _Y, _Symbol)
+        protected Weapon(int _X, int _Y,TileType _TOT, string _Symbol) : base(_X, _Y,_TOT, _Symbol)
         {
 
         }

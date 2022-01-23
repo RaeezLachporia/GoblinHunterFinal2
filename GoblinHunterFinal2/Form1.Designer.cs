@@ -36,27 +36,30 @@ namespace GoblinHunterFinal2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 57);
+            this.label1.Location = new System.Drawing.Point(52, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 25);
+            this.label1.Size = new System.Drawing.Size(38, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
             // txtPlayerInfo
             // 
-            this.txtPlayerInfo.Location = new System.Drawing.Point(657, 57);
+            this.txtPlayerInfo.Location = new System.Drawing.Point(403, 34);
+            this.txtPlayerInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPlayerInfo.Multiline = true;
             this.txtPlayerInfo.Name = "txtPlayerInfo";
-            this.txtPlayerInfo.Size = new System.Drawing.Size(150, 46);
+            this.txtPlayerInfo.Size = new System.Drawing.Size(193, 269);
             this.txtPlayerInfo.TabIndex = 1;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 584);
+            this.ClientSize = new System.Drawing.Size(625, 350);
             this.Controls.Add(this.txtPlayerInfo);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
