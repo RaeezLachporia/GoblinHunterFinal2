@@ -20,11 +20,18 @@ namespace GoblinHunterFinal2
           
             GM.generateMap();
             txtPlayerInfo.Text = GM.PLAYERCHARACTER.ToString();
+            //lblMap.Text = GM.GAMEMAP.ToString();
+            lblMap.Text = GM.ToString();   
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

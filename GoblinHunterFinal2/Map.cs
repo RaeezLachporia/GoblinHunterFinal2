@@ -53,8 +53,8 @@ namespace GoblinHunterFinal2
        
     public Map(int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES, int _NUMGOLD)
         {
-        MAPWIDTH = RANDOM_NUMBER_GENERATOR.Next(_MINWIDTH, _MAXWIDTH);
-        MAPHEIGHT = RANDOM_NUMBER_GENERATOR.Next(_MINHEIGHT, _MAXHEIGHT);
+            MAPWIDTH = _MAXWIDTH;//RANDOM_NUMBER_GENERATOR.Next(_MINWIDTH, _MAXWIDTH);
+            MAPHEIGHT = _MAXHEIGHT;//RANDOM_NUMBER_GENERATOR.Next(_MINHEIGHT, _MAXHEIGHT);
 
         MAPCONTAINER = new Tile[MAPWIDTH, MAPHEIGHT];
 
@@ -94,11 +94,11 @@ namespace GoblinHunterFinal2
         //method generates the map with the "x" symbol used as the barrier blocks that the player cannot pass through 
         public void generateMap()
         {
-            for (int y = 0; y < MAPWIDTH; y++)
+            for (int y = 0; y < MAPHEIGHT; y++)
             {
-                for (int x = 0; x < MAPHEIGHT; x++)
+                for (int x = 0; x < MAPWIDTH; x++)
                 {
-                    if (x == 0 || x == MAPWIDTH - 1 || y == 0 || y == MAPHEIGHT)//BORDER
+                    if (x == 0 || x == (MAPWIDTH-4) || y == 0 || y == MAPHEIGHT-1)//BORDER
                     {
                         //create the barrier blocks that the player cant move past
                         Create(Tile.TileType.Barrier, x, y);
